@@ -1,6 +1,29 @@
 backend:
   name: git-gateway
+  repo: DeCrown-cyber/teachsphere-website
   branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/cc31086a-f965-47d0-9386-c87137136b05/pkce
+  auth_token_endpoint: /sites/cc31086a-f965-47d0-9386-c87137136b05/token
+  gateway_url: https://gateway.decapbridge.com
+
+  commit_messages:
+    create: Create {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}>
+    update: Update {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}>
+    delete: Delete {{collection}} "{{slug}}" - {{author-name}} <{{author-login}}>
+    uploadMedia: Upload "{{path}}" - {{author-name}} <{{author-login}}> via Decap
+    deleteMedia: Delete "{{path}}" - {{author-name}} <{{author-login}}> via Decap
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via Decap
+
+auth:
+  email_claim: email
+  first_name_claim: first_name
+  last_name_claim: last_name
+  avatar_url_claim: avatar_url
+
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+site_url: https://incredible-pika-295f27.netlify.app
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
