@@ -1412,6 +1412,7 @@
         <form id="enquiryForm" action="https://formsubmit.co/info@teachsphere.com.ng" method="POST">
           <input type="hidden" name="_subject" value="New consultation booking request from TeachSphere website">
           <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://teachsphere.com.ng/thank-you.html">
           <div class="form-row">
             <div>
               <label for="fname">Full Name</label>
@@ -1681,19 +1682,16 @@
     .catch(() => {});
 
   const enquiryForm = document.getElementById('enquiryForm');
-  const formSuccess = document.getElementById('formSuccess');
   if(enquiryForm){
     enquiryForm.addEventListener('submit', function(e){
       e.preventDefault();
       const data = new FormData(enquiryForm);
       fetch(enquiryForm.action, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
         .then(()=>{
-          enquiryForm.style.display = 'none';
-          formSuccess.classList.add('show');
+          window.location.href = 'https://teachsphere.com.ng/thank-you.html';
         })
         .catch(()=>{
-          enquiryForm.style.display = 'none';
-          formSuccess.classList.add('show');
+          window.location.href = 'https://teachsphere.com.ng/thank-you.html';
         });
     });
   }

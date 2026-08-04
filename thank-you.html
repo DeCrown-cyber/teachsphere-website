@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — TeachSphere</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-deep:#0F1E3D;
+    --navy:#1B3B7A;
+    --gold:#C89B3C;
+    --gold-light:#E7C978;
+    --ink-soft:#4B5670;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(160deg, var(--navy-deep), var(--navy));
+    color:#fff;
+    padding:24px;
+  }
+  .card{
+    max-width:520px;
+    width:100%;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:18px;
+    padding:52px 40px;
+    text-align:center;
+  }
+  .icon{
+    width:68px; height:68px; border-radius:50%;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 22px;
+    font-size:2rem;
+    color:var(--navy-deep);
+  }
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin-bottom:12px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-size:1.65rem;
+    margin:0 0 18px;
+    line-height:1.3;
+  }
+  .checklist{
+    list-style:none;
+    padding:0;
+    margin:0 0 30px;
+    text-align:left;
+    display:inline-block;
+  }
+  .checklist li{
+    color:rgba(255,255,255,0.85);
+    font-size:0.98rem;
+    margin-bottom:12px;
+    line-height:1.5;
+  }
+  .btn-row{
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:8px;
+  }
+  a.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    font-weight:600;
+    padding:14px 28px;
+    border-radius:10px;
+    font-size:0.95rem;
+    transition:transform .2s ease;
+  }
+  a.btn:hover{ transform:translateY(-2px); }
+  .btn-gold{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    color:var(--navy-deep);
+  }
+  .btn-whatsapp{
+    background:#25D366;
+    color:#fff;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">&#10003;</div>
+    <p class="eyebrow">Message Received</p>
+    <h1>Thank you for contacting TeachSphere!</h1>
+    <ul class="checklist">
+      <li>Your message has been received successfully.</li>
+      <li>Our team will contact you within 24 hours.</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn btn-gold" href="/index.html">&#8592; Return to Home</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/2348077268815?text=Hi%20TeachSphere%2C%20I%20just%20submitted%20an%20enquiry%20on%20your%20website" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.24c-.22.62-1.29 1.19-1.79 1.24-.46.05-1.04.07-1.68-.11-.39-.11-.89-.28-1.53-.55-2.69-1.16-4.45-3.87-4.58-4.05-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.95-2.25.25-.27.54-.34.72-.34.18 0 .36 0 .52.01.17.01.39-.06.61.47.22.53.75 1.83.82 1.96.07.13.11.28.02.46-.09.18-.14.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.27-.12.53.15.26.67 1.1 1.44 1.79 1 .89 1.84 1.17 2.1 1.3.26.13.41.11.56-.07.15-.18.65-.76.83-1.02.18-.26.35-.22.59-.13.24.09 1.53.72 1.79.85.26.13.44.2.5.31.06.11.06.65-.16 1.27z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+</body>
+</html>
