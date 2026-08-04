@@ -1,25 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZY8BEMZT6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WZY8BEMZT6');
-</script>
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xwutxbrgao");
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TeachSphere — Learn. Manage. Grow.</title>
@@ -1412,7 +1393,6 @@
         <form id="enquiryForm" action="https://formsubmit.co/info@teachsphere.com.ng" method="POST">
           <input type="hidden" name="_subject" value="New consultation booking request from TeachSphere website">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://teachsphere.com.ng/thank-you.html">
           <div class="form-row">
             <div>
               <label for="fname">Full Name</label>
@@ -1682,16 +1662,19 @@
     .catch(() => {});
 
   const enquiryForm = document.getElementById('enquiryForm');
+  const formSuccess = document.getElementById('formSuccess');
   if(enquiryForm){
     enquiryForm.addEventListener('submit', function(e){
       e.preventDefault();
       const data = new FormData(enquiryForm);
       fetch(enquiryForm.action, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
         .then(()=>{
-          window.location.href = 'https://teachsphere.com.ng/thank-you.html';
+          enquiryForm.style.display = 'none';
+          formSuccess.classList.add('show');
         })
         .catch(()=>{
-          window.location.href = 'https://teachsphere.com.ng/thank-you.html';
+          enquiryForm.style.display = 'none';
+          formSuccess.classList.add('show');
         });
     });
   }
@@ -1699,23 +1682,13 @@
   const newsletterForm = document.getElementById('newsletterForm');
   const newsletterSuccess = document.getElementById('newsletterSuccess');
   if(newsletterForm){
-    // TODO: replace AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME, and AIRTABLE_API_KEY below
-    const AIRTABLE_BASE_ID = 'REPLACE_WITH_BASE_ID';
-    const AIRTABLE_TABLE_NAME = 'Subscribers';
-    const AIRTABLE_API_KEY = 'REPLACE_WITH_API_KEY';
-
     newsletterForm.addEventListener('submit', function(e){
       e.preventDefault();
       const email = newsletterForm.querySelector('[name="Subscriber Email"]').value;
-      fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`, {
+      fetch('/.netlify/functions/subscribe', {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          fields: { Email: email, Date: new Date().toISOString() }
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
       })
         .then(()=>{
           newsletterForm.style.display = 'none';
