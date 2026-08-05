@@ -7,6 +7,16 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics (GA4) — TeachSphere property -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZY8BEMZT6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WZY8BEMZT6');
+</script>
+
 <style>
   :root{
     --navy-deep:#0F1E3D;
@@ -28,13 +38,18 @@
     padding:24px;
   }
   .card{
-    max-width:520px;
+    max-width:540px;
     width:100%;
     background:rgba(255,255,255,0.06);
     border:1px solid rgba(255,255,255,0.14);
     border-radius:18px;
     padding:52px 40px;
     text-align:center;
+    animation:cardIn .5s ease;
+  }
+  @keyframes cardIn{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
   }
   .icon{
     width:68px; height:68px; border-radius:50%;
@@ -43,40 +58,117 @@
     margin:0 auto 22px;
     font-size:2rem;
     color:var(--navy-deep);
+    box-shadow:0 10px 26px rgba(200,155,60,0.35);
   }
   .eyebrow{
     font-family:'Space Mono',monospace;
     font-size:0.72rem;
-    letter-spacing:0.12em;
+    letter-spacing:0.14em;
     text-transform:uppercase;
     color:var(--gold-light);
     margin-bottom:12px;
   }
   h1{
     font-family:'Fraunces',serif;
-    font-size:1.65rem;
-    margin:0 0 18px;
+    font-size:1.7rem;
+    margin:0 0 14px;
     line-height:1.3;
   }
-  .checklist{
-    list-style:none;
-    padding:0;
-    margin:0 0 30px;
+  .subline{
+    color:rgba(255,255,255,0.75);
+    font-size:1rem;
+    line-height:1.6;
+    margin:0 0 32px;
+  }
+
+  /* Confirmed fact — the one true checkmark */
+  .confirmed{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(231,201,120,0.1);
+    border:1px solid rgba(231,201,120,0.3);
+    border-radius:10px;
+    padding:12px 18px;
+    margin:0 0 28px;
+    font-size:0.92rem;
+    color:#fff;
     text-align:left;
-    display:inline-block;
   }
-  .checklist li{
-    color:rgba(255,255,255,0.85);
-    font-size:0.98rem;
-    margin-bottom:12px;
-    line-height:1.5;
+  .confirmed .tick{
+    flex-shrink:0;
+    width:20px; height:20px;
+    border-radius:50%;
+    background:var(--gold-light);
+    color:var(--navy-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.72rem;
+    font-weight:700;
   }
-  .btn-row{
+
+  /* Next steps — numbered, for things that haven't happened yet */
+  .next-steps{
+    text-align:left;
+    margin:0 0 34px;
+    padding:0;
+    list-style:none;
+    counter-reset:step;
+  }
+  .next-steps li{
+    counter-increment:step;
     display:flex;
     gap:14px;
+    padding:0 0 18px;
+    position:relative;
+  }
+  .next-steps li:last-child{ padding-bottom:0; }
+  .next-steps li::after{
+    content:'';
+    position:absolute;
+    left:13px;
+    top:28px;
+    bottom:0;
+    width:1px;
+    background:rgba(255,255,255,0.15);
+  }
+  .next-steps li:last-child::after{ display:none; }
+  .step-num{
+    flex-shrink:0;
+    width:26px; height:26px;
+    border-radius:50%;
+    border:1.5px solid var(--gold-light);
+    color:var(--gold-light);
+    font-family:'Space Mono',monospace;
+    font-size:0.75rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .step-num::before{ content:counter(step); }
+  .step-text{
+    color:rgba(255,255,255,0.85);
+    font-size:0.96rem;
+    line-height:1.55;
+    padding-top:3px;
+  }
+  .step-text strong{ color:#fff; }
+
+  /* Simple highlight note, used on the newsletter variant */
+  .note{
+    background:rgba(255,255,255,0.05);
+    border-left:3px solid var(--gold-light);
+    border-radius:8px;
+    padding:16px 18px;
+    text-align:left;
+    color:rgba(255,255,255,0.85);
+    font-size:0.96rem;
+    line-height:1.6;
+    margin:0 0 32px;
+  }
+
+  .btn-row{
+    display:flex;
+    gap:12px;
     justify-content:center;
     flex-wrap:wrap;
-    margin-top:8px;
   }
   a.btn{
     display:inline-flex;
@@ -84,38 +176,106 @@
     gap:8px;
     text-decoration:none;
     font-weight:600;
-    padding:14px 28px;
+    padding:14px 26px;
     border-radius:10px;
-    font-size:0.95rem;
-    transition:transform .2s ease;
+    font-size:0.94rem;
+    transition:transform .2s ease, box-shadow .2s ease;
   }
   a.btn:hover{ transform:translateY(-2px); }
   .btn-gold{
     background:linear-gradient(135deg, var(--gold-light), var(--gold));
     color:var(--navy-deep);
+    box-shadow:0 8px 20px rgba(200,155,60,0.3);
   }
   .btn-whatsapp{
     background:#25D366;
     color:#fff;
+    box-shadow:0 8px 20px rgba(37,211,102,0.3);
+  }
+  .btn-outline{
+    background:transparent;
+    color:#fff;
+    border:1.5px solid rgba(255,255,255,0.35);
+  }
+  .btn-outline:hover{ background:rgba(255,255,255,0.1); }
+
+  .footer-note{
+    margin-top:26px;
+    font-size:0.78rem;
+    color:rgba(255,255,255,0.45);
+  }
+
+  @media (max-width:480px){
+    .card{ padding:36px 22px; border-radius:16px; }
+    .btn-row{ flex-direction:column; }
+    a.btn{ width:100%; justify-content:center; }
   }
 </style>
 </head>
 <body>
   <div class="card">
     <div class="icon">&#10003;</div>
-    <p class="eyebrow">Message Received</p>
-    <h1>Thank you for contacting TeachSphere!</h1>
-    <ul class="checklist">
-      <li>Your message has been received successfully.</li>
-      <li>Our team will contact you within 24 hours.</li>
-    </ul>
-    <div class="btn-row">
-      <a class="btn btn-gold" href="/index.html">&#8592; Return to Home</a>
-      <a class="btn btn-whatsapp" href="https://wa.me/2348077268815?text=Hi%20TeachSphere%2C%20I%20just%20submitted%20an%20enquiry%20on%20your%20website" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.24c-.22.62-1.29 1.19-1.79 1.24-.46.05-1.04.07-1.68-.11-.39-.11-.89-.28-1.53-.55-2.69-1.16-4.45-3.87-4.58-4.05-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.95-2.25.25-.27.54-.34.72-.34.18 0 .36 0 .52.01.17.01.39-.06.61.47.22.53.75 1.83.82 1.96.07.13.11.28.02.46-.09.18-.14.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.27-.12.53.15.26.67 1.1 1.44 1.79 1 .89 1.84 1.17 2.1 1.3.26.13.41.11.56-.07.15-.18.65-.76.83-1.02.18-.26.35-.22.59-.13.24.09 1.53.72 1.79.85.26.13.44.2.5.31.06.11.06.65-.16 1.27z"/></svg>
-        WhatsApp Us
-      </a>
-    </div>
+    <p class="eyebrow" id="tyEyebrow">Message Received</p>
+    <h1 id="tyHeading">Thank You for Contacting TeachSphere!</h1>
+    <p class="subline" id="tySubline">Your consultation request has been received successfully.</p>
+
+    <div id="tyBody"></div>
+
+    <div class="btn-row" id="tyActions"></div>
   </div>
+
+<p class="footer-note">TeachSphere — Empowering Schools to Learn Better, Manage Smarter &amp; Grow Faster</p>
+
+<script>
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var type = params.get('type') || 'consultation';
+
+    var eyebrow = document.getElementById('tyEyebrow');
+    var heading = document.getElementById('tyHeading');
+    var subline = document.getElementById('tySubline');
+    var body = document.getElementById('tyBody');
+    var actions = document.getElementById('tyActions');
+
+    var WHATSAPP_ICON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.07-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.24c-.22.62-1.29 1.19-1.79 1.24-.46.05-1.04.07-1.68-.11-.39-.11-.89-.28-1.53-.55-2.69-1.16-4.45-3.87-4.58-4.05-.13-.18-1.1-1.46-1.1-2.79 0-1.33.7-1.98.95-2.25.25-.27.54-.34.72-.34.18 0 .36 0 .52.01.17.01.39-.06.61.47.22.53.75 1.83.82 1.96.07.13.11.28.02.46-.09.18-.14.29-.27.45-.13.16-.28.35-.4.47-.13.13-.27.27-.12.53.15.26.67 1.1 1.44 1.79 1 .89 1.84 1.17 2.1 1.3.26.13.41.11.56-.07.15-.18.65-.76.83-1.02.18-.26.35-.22.59-.13.24.09 1.53.72 1.79.85.26.13.44.2.5.31.06.11.06.65-.16 1.27z"/></svg>';
+
+    var HOME_BTN = '<a class="btn btn-gold" href="/index.html">&#8592; Return to Home</a>';
+    var WHATSAPP_BTN = '<a class="btn btn-whatsapp" href="https://wa.me/2348077268815?text=Hi%20TeachSphere%2C%20I%20just%20submitted%20an%20enquiry%20on%20your%20website" target="_blank" rel="noopener">' + WHATSAPP_ICON + 'WhatsApp Us</a>';
+    var SERVICES_BTN = '<a class="btn btn-outline" href="/index.html#services">Explore Our Services</a>';
+
+    if(type === 'newsletter'){
+      eyebrow.textContent = 'Subscribed';
+      heading.innerHTML = '&#127881; Thank You for Subscribing!';
+      subline.textContent = 'You\'re officially on the list.';
+
+      body.innerHTML =
+        '<div class="note">You\'ll receive the latest TeachSphere updates, educational resources, and school technology insights directly in your inbox.</div>';
+
+      actions.innerHTML = HOME_BTN + SERVICES_BTN;
+
+      if(typeof gtag === 'function'){
+        gtag('event', 'newsletter_signup', { method: 'website_form' });
+      }
+    } else {
+      eyebrow.textContent = 'Message Received';
+      heading.textContent = 'Thank You for Contacting TeachSphere!';
+      subline.textContent = 'Your consultation request has been received successfully.';
+
+      body.innerHTML =
+        '<div class="confirmed"><span class="tick">&#10003;</span> Request logged and sent to our team</div>' +
+        '<ul class="next-steps">' +
+          '<li><span class="step-num"></span><span class="step-text"><strong>We review your request.</strong> A member of the TeachSphere team looks over the details you shared.</span></li>' +
+          '<li><span class="step-num"></span><span class="step-text"><strong>We reach out.</strong> Expect an email or WhatsApp message from us within one business day.</span></li>' +
+          '<li><span class="step-num"></span><span class="step-text"><strong>In the meantime,</strong> feel free to explore our services or chat with us directly if it\'s urgent.</span></li>' +
+        '</ul>';
+
+      actions.innerHTML = HOME_BTN + WHATSAPP_BTN + SERVICES_BTN;
+
+      if(typeof gtag === 'function'){
+        gtag('event', 'generate_lead', { method: 'consultation_form' });
+      }
+    }
+  })();
+</script>
 </body>
 </html>
