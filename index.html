@@ -472,7 +472,7 @@
   }
   .coverage-head{position:relative; text-align:center; max-width:600px; margin:0 auto 8px;}
   .coverage-head h3{color:#fff; font-family:'Fraunces',serif; font-size:1.9rem; font-weight:600; margin-top:12px;}
-  .coverage-grid{position:relative; display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; margin-top:44px;}
+  .coverage-grid{position:relative; display:grid; grid-template-columns:1fr; gap:48px; align-items:center; margin-top:44px; justify-items:center;}
   @media(max-width:900px){.coverage-grid{grid-template-columns:1fr; gap:32px;}}
 
   .ng-map-stage{position:relative;}
@@ -1018,20 +1018,6 @@
         <h3>Where We Operate</h3>
       </div>
       <div class="coverage-grid">
-        <div class="ng-map-stage">
-          <svg viewBox="0 0 500 500" role="img" aria-label="Map of Nigeria highlighting states where TeachSphere operates">
-            <path class="ng-outline" d="M123,66 C170,55 260,50 300,58 C360,68 400,85 422,112 C415,150 405,190 403,227 C370,280 300,350 250,411 C220,435 185,442 154,443 C110,430 70,410 54,388 C50,340 55,250 60,180 C63,150 68,120 77,135 C90,110 100,85 123,66 Z"/>
-            <g class="ng-pin" data-state="Lagos"><circle class="pulse" cx="65" cy="378" r="4"/><circle class="dot" cx="65" cy="378" r="5"/><text class="ng-pin-label" x="65" y="398">Lagos</text></g>
-            <g class="ng-pin" data-state="Ogun"><circle class="pulse" cx="80" cy="348" r="4"/><circle class="dot" cx="80" cy="348" r="5"/><text class="ng-pin-label" x="80" y="333">Ogun</text></g>
-            <g class="ng-pin" data-state="Ondo"><circle class="pulse" cx="120" cy="333" r="4"/><circle class="dot" cx="120" cy="333" r="5"/><text class="ng-pin-label" x="120" y="318">Ondo</text></g>
-            <g class="ng-pin" data-state="Edo"><circle class="pulse" cx="150" cy="360" r="4"/><circle class="dot" cx="150" cy="360" r="5"/><text class="ng-pin-label" x="150" y="380">Edo</text></g>
-            <g class="ng-pin" data-state="Delta"><circle class="pulse" cx="154" cy="405" r="4"/><circle class="dot" cx="154" cy="405" r="5"/><text class="ng-pin-label" x="154" y="425">Delta</text></g>
-            <g class="ng-pin" data-state="Anambra"><circle class="pulse" cx="202" cy="376" r="4"/><circle class="dot" cx="202" cy="376" r="5"/><text class="ng-pin-label" x="202" y="396">Anambra</text></g>
-            <g class="ng-pin" data-state="FCT Abuja"><circle class="pulse" cx="216" cy="246" r="4"/><circle class="dot" cx="216" cy="246" r="5"/><text class="ng-pin-label" x="216" y="231">Abuja</text></g>
-            <g class="ng-pin" data-state="Nasarawa"><circle class="pulse" cx="244" cy="266" r="4"/><circle class="dot" cx="244" cy="266" r="5"/><text class="ng-pin-label" x="255" y="280">Nasarawa</text></g>
-            <g class="ng-pin" data-state="Niger"><circle class="pulse" cx="158" cy="203" r="4"/><circle class="dot" cx="158" cy="203" r="5"/><text class="ng-pin-label" x="158" y="188">Niger</text></g>
-          </svg>
-        </div>
         <div class="coverage-states">
           <div class="state-chip" data-state="Lagos"><i class="fa-solid fa-location-dot"></i> Lagos</div>
           <div class="state-chip" data-state="Ogun"><i class="fa-solid fa-location-dot"></i> Ogun</div>
@@ -1522,17 +1508,16 @@
       <h3><i class="fa-solid fa-paper-plane" style="margin-right:8px;"></i><span id="cms-newsletter-heading">Stay Ahead in Education</span></h3>
       <p id="cms-newsletter-text">Get practical school management tips, admission strategies, EdTech updates, and exclusive resources for school leaders.</p>
     </div>
-    <form class="newsletter-form" id="newsletterForm" action="https://formsubmit.co/info@teachsphere.com.ng" method="POST">
-      <input type="hidden" name="_subject" value="New newsletter subscriber from TeachSphere website">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="email" name="Subscriber Email" placeholder="Your email address" required>
-      <button type="submit" class="btn btn-gold"><i class="fa-solid fa-arrow-right"></i> Subscribe</button>
-      <div class="newsletter-note">No spam — unsubscribe anytime.</div>
+    <form class="newsletter-form" id="newsletterForm" novalidate>
+      <input type="email" name="Subscriber Email" id="newsletterEmail" placeholder="Your email address" required inputmode="email" autocomplete="email">
+      <button type="submit" class="btn btn-gold" id="newsletterSubmitBtn"><i class="fa-solid fa-arrow-right"></i> Subscribe</button>
+      <div class="newsletter-note" id="newsletterNote">No spam — unsubscribe anytime.</div>
+      <div class="newsletter-error" id="newsletterError" style="display:none; color:#ffb4b4; font-size:0.85rem; margin-top:8px;"></div>
     </form>
     <div class="newsletter-success" id="newsletterSuccess" style="display:none; text-align:center;">
       <i class="fa-solid fa-circle-check" style="font-size:1.8rem; color:var(--gold); margin-bottom:10px; display:block;"></i>
-      <p style="color:var(--navy-deep); font-weight:600;">Welcome aboard! Thanks for subscribing — we're glad to have you with us.</p>
-      <p style="margin-top:6px;"><a href="https://teachsphere.com.ng" style="color:var(--gold); font-weight:700;">https://teachsphere.com.ng</a></p>
+      <p style="color:var(--navy-deep); font-weight:700; font-size:1.05rem;">🎉 Thank you for subscribing!</p>
+      <p style="margin-top:6px; color:var(--navy-deep);">You'll receive the latest TeachSphere updates, educational resources, and school technology insights directly in your inbox.</p>
     </div>
   </div>
 </section>
@@ -1681,22 +1666,67 @@
 
   const newsletterForm = document.getElementById('newsletterForm');
   const newsletterSuccess = document.getElementById('newsletterSuccess');
+  const newsletterError = document.getElementById('newsletterError');
+  const newsletterEmailInput = document.getElementById('newsletterEmail');
+  const newsletterSubmitBtn = document.getElementById('newsletterSubmitBtn');
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function showNewsletterError(msg){
+    if(!newsletterError) return;
+    newsletterError.textContent = msg;
+    newsletterError.style.display = 'block';
+  }
+  function clearNewsletterError(){
+    if(!newsletterError) return;
+    newsletterError.style.display = 'none';
+    newsletterError.textContent = '';
+  }
+  function setNewsletterLoading(isLoading){
+    if(!newsletterSubmitBtn) return;
+    newsletterSubmitBtn.disabled = isLoading;
+    newsletterSubmitBtn.innerHTML = isLoading
+      ? '<i class="fa-solid fa-spinner fa-spin"></i> Subscribing…'
+      : '<i class="fa-solid fa-arrow-right"></i> Subscribe';
+  }
+
   if(newsletterForm){
     newsletterForm.addEventListener('submit', function(e){
       e.preventDefault();
-      const email = newsletterForm.querySelector('[name="Subscriber Email"]').value;
+      clearNewsletterError();
+
+      const email = (newsletterEmailInput ? newsletterEmailInput.value : '').trim();
+
+      if(!email){
+        showNewsletterError('Please enter your email address.');
+        return;
+      }
+      if(!EMAIL_RE.test(email)){
+        showNewsletterError('Please enter a valid email address.');
+        return;
+      }
+
+      setNewsletterLoading(true);
+
       fetch('/.netlify/functions/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email: email, source: 'Website Newsletter' })
       })
-        .then(()=>{
-          newsletterForm.style.display = 'none';
-          newsletterSuccess.style.display = 'block';
+        .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, status: res.status, data: data }; }); })
+        .then(function(result){
+          setNewsletterLoading(false);
+          if(result.ok){
+            newsletterForm.style.display = 'none';
+            newsletterSuccess.style.display = 'block';
+          } else if(result.status === 409 || (result.data && result.data.duplicate)){
+            showNewsletterError('This email is already subscribed — thanks for being with us!');
+          } else {
+            showNewsletterError((result.data && result.data.error) || 'Something went wrong. Please try again in a moment.');
+          }
         })
-        .catch(()=>{
-          newsletterForm.style.display = 'none';
-          newsletterSuccess.style.display = 'block';
+        .catch(function(){
+          setNewsletterLoading(false);
+          showNewsletterError('Network error — please check your connection and try again.');
         });
     });
   }
