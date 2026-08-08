@@ -11,9 +11,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="description" content="TeachSphere is a Nigerian Education Technology and School Growth Company helping schools learn better, manage smarter, and grow faster through digital solutions, strategic marketing, training, and consulting.">
+<meta name="description" content="TeachSphere is an Education Technology Ecosystem developing intelligent digital solutions for learning, school management, educator development, assessments, and institutional growth.">
 <meta property="og:title" content="TeachSphere — Learn. Manage. Grow.">
-<meta property="og:description" content="Empowering Schools. Enriching Learning. Shaping Futures. Digital solutions, strategic marketing, training and consulting for schools across Nigeria and Africa.">
+<meta property="og:description" content="Transforming Learning. Empowering Institutions. Shaping the Future. An Education Technology Ecosystem for learners, educators, schools, and institutions worldwide.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TeachSphere — Learn. Manage. Grow.">
@@ -326,7 +326,30 @@
 
   /* Ecosystem section */
   .ecosystem-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .ecosystem-grid-6{grid-template-columns:repeat(3,1fr);}
   @media(max-width:900px){.ecosystem-grid{grid-template-columns:1fr;}}
+  @media(min-width:601px) and (max-width:900px){.ecosystem-grid-6{grid-template-columns:repeat(2,1fr);}}
+  .btn-disabled{opacity:0.55; cursor:default; pointer-events:none;}
+
+  .roadmap-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media(max-width:800px){.roadmap-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.roadmap-grid{grid-template-columns:1fr;}}
+  .roadmap-year{background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px 22px; border-top:4px solid var(--gold);}
+  .roadmap-year-label{font-family:'Space Mono',monospace; font-weight:700; font-size:1.1rem; color:var(--navy-deep); margin-bottom:16px;}
+  .roadmap-item{display:flex; align-items:center; gap:10px; font-size:0.88rem; color:var(--ink-soft); padding:6px 0;}
+  .roadmap-item i{color:var(--gold); font-size:0.85rem;}
+  .roadmap-done{color:var(--navy-deep); font-weight:600;}
+  .roadmap-done i{color:#2e8b57;}
+
+  .glance-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px;}
+  .glance-item{
+    background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px 18px;
+    text-align:center; display:flex; flex-direction:column; align-items:center; gap:12px;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .glance-item:hover{transform:translateY(-4px); border-color:var(--gold);}
+  .glance-item i{color:var(--gold); font-size:1.5rem;}
+  .glance-item span{font-weight:600; font-size:0.85rem; color:var(--navy-deep);}
   .ecosystem-card{
     background:#fff; border:1px solid var(--line); border-radius:18px; padding:34px 28px;
     transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; position:relative; overflow:hidden;
@@ -844,8 +867,8 @@
 
   /* Footer v2 */
   footer{padding:70px 0 0;}
-  .foot-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr 1fr; gap:32px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.08);}
-  @media(max-width:1100px){.foot-grid{grid-template-columns:1fr 1fr 1fr;}}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr; gap:28px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.08);}
+  @media(max-width:1200px){.foot-grid{grid-template-columns:1fr 1fr 1fr;}}
   @media(max-width:700px){.foot-grid{grid-template-columns:1fr 1fr; row-gap:36px;}}
   @media(max-width:560px){.foot-grid{grid-template-columns:1fr;}}
   .foot-col h4{color:#fff; font-family:'Space Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:18px;}
@@ -955,13 +978,8 @@
     </div>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
-      <a href="#ecosystem">Learn</a>
-      <a href="#ecosystem">Manage</a>
-      <a href="#ecosystem">Academy</a>
-      <a href="#who">About Us</a>
-      <a href="#solutions">Solutions</a>
-      <a href="#services">Services</a>
-      <a href="#technology">Technology Partners</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#who">About</a>
       <a href="#resources">Resources</a>
       <a href="#contact">Contact</a>
     </div>
@@ -975,12 +993,12 @@
 <section class="hero" id="home">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">EDUCATION TECHNOLOGY &amp; SCHOOL GROWTH</div>
-      <h1 id="cms-hero-heading">Empowering Schools to Learn Better, Manage Smarter &amp; Grow Faster</h1>
-      <p class="lead" id="cms-hero-lead">TeachSphere is an Education Technology and School Growth Company that partners with schools to provide innovative technology solutions, professional development, educational consulting, and strategic school growth services.</p>
+      <div class="eyebrow">EDUCATION TECHNOLOGY ECOSYSTEM</div>
+      <h1 id="cms-hero-heading">Transforming Learning. Empowering Institutions. Shaping the Future.</h1>
+      <p class="lead" id="cms-hero-lead">TeachSphere is an Education Technology Ecosystem developing intelligent digital solutions for learning, school management, educator development, assessments, and institutional growth. Our mission is to help learners, educators, schools, and institutions thrive in a digital-first world.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-gold"><i class="fa-solid fa-calendar-check"></i> Book a Consultation</a>
-        <a href="#solutions" class="btn btn-outline"><i class="fa-solid fa-rocket"></i> Explore Our Solutions</a>
+        <a href="#ecosystem" class="btn btn-gold"><i class="fa-solid fa-compass"></i> Explore TeachSphere</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-calendar-check"></i> Book Strategy Session</a>
       </div>
       <div class="hero-tags">
         <div class="tag-chip"><i class="fa-solid fa-laptop-code"></i> EdTech Solutions</div>
@@ -1000,16 +1018,16 @@
   <div class="wrap">
     <div class="section-head reveal" style="text-align:center; max-width:680px; margin:0 auto 48px;">
       <div class="eyebrow" style="justify-content:center;">THE TEACHSPHERE ECOSYSTEM</div>
-      <h2>One ecosystem. Built to grow with you.</h2>
+      <h2>One Platform. Multiple Solutions. Built for the Future of Education.</h2>
       <p>TeachSphere is expanding beyond the website you're on today. Here's what's coming next.</p>
     </div>
-    <div class="ecosystem-grid">
+    <div class="ecosystem-grid ecosystem-grid-6">
 
       <div class="ecosystem-card reveal">
         <span class="eco-badge eco-badge-soon">Coming Soon</span>
-        <div class="eco-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="eco-icon"><i class="fa-solid fa-book-open"></i></div>
         <h3>TeachSphere Learn</h3>
-        <p>A modern Learning Management System offering free &amp; premium learning, offline learning (PWA), live instructor support, digital certificates, and learning analytics.</p>
+        <p>Digital Learning Platform — free &amp; premium courses, offline learning (PWA), live instructor support, digital certificates, and learning analytics.</p>
         <div class="eco-actions">
           <a href="https://learn.teachsphere.com.ng" class="btn btn-outline"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
           <a href="https://learn.teachsphere.com.ng#notify" class="btn btn-gold"><i class="fa-solid fa-bell"></i> Notify Me</a>
@@ -1020,7 +1038,7 @@
         <span class="eco-badge eco-badge-dev">In Development</span>
         <div class="eco-icon"><i class="fa-solid fa-school"></i></div>
         <h3>TeachSphere Manage</h3>
-        <p>A complete School Management System covering admissions, the Student Information System, Parent &amp; Teacher Portals, Finance &amp; Payroll, Attendance, Results, and Communication.</p>
+        <p>School Management Platform — admissions, Student Information System, Parent &amp; Teacher Portals, Finance &amp; Payroll, Attendance, Results, and Communication.</p>
         <div class="eco-actions">
           <a href="https://manage.teachsphere.com.ng" class="btn btn-outline"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
           <a href="https://manage.teachsphere.com.ng#notify" class="btn btn-gold"><i class="fa-solid fa-unlock-keyhole"></i> Request Early Access</a>
@@ -1029,12 +1047,45 @@
 
       <div class="ecosystem-card reveal">
         <span class="eco-badge eco-badge-soon">Coming Soon</span>
+        <div class="eco-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>TeachSphere Growth</h3>
+        <p>Marketing &amp; School Growth — strategic digital marketing, admissions campaigns, and lead generation built specifically for schools and institutions.</p>
+        <div class="eco-actions">
+          <a href="https://growth.teachsphere.com.ng" class="btn btn-outline"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+          <a href="https://growth.teachsphere.com.ng#notify" class="btn btn-gold"><i class="fa-solid fa-bell"></i> Notify Me</a>
+        </div>
+      </div>
+
+      <div class="ecosystem-card reveal">
+        <span class="eco-badge eco-badge-soon">Coming Soon</span>
         <div class="eco-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
         <h3>TeachSphere Academy</h3>
-        <p>Professional development for teachers, school leaders, administrators, and education professionals — certifications, leadership training, and educational consulting.</p>
+        <p>Professional Development — certifications, leadership training, digital skills, and educational consulting for teachers and school leaders.</p>
         <div class="eco-actions">
           <a href="https://academy.teachsphere.com.ng" class="btn btn-outline"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
           <a href="https://academy.teachsphere.com.ng#notify" class="btn btn-gold"><i class="fa-solid fa-list-check"></i> Join Waitlist</a>
+        </div>
+      </div>
+
+      <div class="ecosystem-card reveal">
+        <span class="eco-badge eco-badge-soon">Coming Soon</span>
+        <div class="eco-icon"><i class="fa-solid fa-file-pen"></i></div>
+        <h3>TeachSphere Exams</h3>
+        <p>A secure digital assessment platform for quizzes, practice tests, mock examinations, certifications, and school-based assessments — powering exams within TeachSphere Learn while also serving schools and institutions independently.</p>
+        <div class="eco-actions">
+          <a href="https://exams.teachsphere.com.ng" class="btn btn-outline"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+          <a href="https://exams.teachsphere.com.ng#notify" class="btn btn-gold"><i class="fa-solid fa-bell"></i> Notify Me</a>
+        </div>
+      </div>
+
+      <div class="ecosystem-card reveal">
+        <span class="eco-badge eco-badge-soon">Coming Soon</span>
+        <div class="eco-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>TeachSphere AI</h3>
+        <p>Intelligent Learning Assistant — AI-powered support for learners and educators, built directly into the TeachSphere ecosystem.</p>
+        <div class="eco-actions">
+          <a href="https://ai.teachsphere.com.ng" class="btn btn-outline"><i class="fa-solid fa-arrow-right"></i> Learn More</a>
+          <a href="https://ai.teachsphere.com.ng#notify" class="btn btn-gold"><i class="fa-solid fa-bell"></i> Notify Me</a>
         </div>
       </div>
 
@@ -1045,25 +1096,21 @@
 <section class="section" id="who">
   <div class="wrap who-grid">
     <div class="reveal">
-      <div class="eyebrow">WHO WE ARE</div>
-      <h2 style="margin-top:14px;">Your partner in building a smarter, stronger school.</h2>
-      <p style="margin-top:22px;">TeachSphere is a forward-thinking Education Technology and School Growth Company dedicated to transforming the way schools teach, manage, and grow. We provide innovative digital solutions, strategic marketing services, professional training, and educational consulting that empower schools to achieve excellence in teaching, learning, administration, and enrolment.</p>
-      <p>We believe every school deserves access to modern technology, effective management systems, and sustainable growth strategies — bridging the gap between traditional education and the digital future.</p>
-
-      <div class="eyebrow" style="margin-top:48px;">OUR STORY</div>
-      <p style="margin-top:22px;">TeachSphere was born out of a passion for education and a desire to solve the everyday challenges schools face daily — declining admissions, limited digital presence, inefficient administration, and inadequate access to modern technology.</p>
-      <p>Recognizing this gap, we set out to provide practical, innovative, and affordable solutions that help institutions thrive — evolving into a comprehensive education solutions company that helps schools build stronger brands, attract more learners, streamline operations, and prepare students for the future.</p>
+      <div class="eyebrow">ABOUT TEACHSPHERE</div>
+      <h2 style="margin-top:14px;">Building the future of education, one platform at a time.</h2>
+      <p style="margin-top:22px;">TeachSphere is an Education Technology Ecosystem dedicated to transforming how learners, educators, and institutions teach, manage, and grow. Born from a passion for solving education's everyday challenges, we're building a connected suite of products — Learn, Manage, Growth, Academy, Exams, and AI — under one trusted brand.</p>
+      <p>We believe every learner and institution deserves access to modern technology, effective systems, and sustainable growth strategies — bridging the gap between traditional education and the digital future.</p>
     </div>
     <div class="reveal">
       <div class="quote-card">
         <p>"When schools grow, communities flourish, and futures are transformed."</p>
-        <div class="quote-foot"><i class="fa-solid fa-globe"></i> TEACHSPHERE PHILOSOPHY</div>
+        <div class="quote-foot"><i class="fa-solid fa-globe"></i> LEADERSHIP FOCUS</div>
       </div>
       <div class="philosophy-grid">
+        <div class="philosophy-card"><div class="philosophy-icon"><i class="fa-solid fa-lightbulb"></i></div><span>Education Innovation</span></div>
         <div class="philosophy-card"><div class="philosophy-icon"><i class="fa-solid fa-network-wired"></i></div><span>Digital Transformation</span></div>
-        <div class="philosophy-card"><div class="philosophy-icon"><i class="fa-solid fa-bullhorn"></i></div><span>Strategic Marketing</span></div>
-        <div class="philosophy-card"><div class="philosophy-icon"><i class="fa-solid fa-chalkboard-user"></i></div><span>Professional Training</span></div>
-        <div class="philosophy-card"><div class="philosophy-icon"><i class="fa-solid fa-lightbulb"></i></div><span>Educational Consulting</span></div>
+        <div class="philosophy-card"><div class="philosophy-icon"><i class="fa-solid fa-laptop-code"></i></div><span>Learning Technology</span></div>
+        <div class="philosophy-card"><div class="philosophy-icon"><i class="fa-solid fa-chart-line"></i></div><span>School Growth Strategy</span></div>
       </div>
     </div>
   </div>
@@ -1080,7 +1127,7 @@
         <div class="eyebrow" style="color:var(--gold-light);">MEET THE FOUNDER</div>
         <div class="founder-name" style="margin-top:10px;">Adebowale Adeleye</div>
         <div class="founder-title">Founder &amp; Chief Executive Officer</div>
-        <p class="founder-bio">Adebowale Adeleye is the Founder and Chief Executive Officer of TeachSphere, an Education Technology and School Growth Company committed to helping schools embrace digital transformation. With a hands-on, results-driven approach, he works directly with school owners and administrators to design practical technology, marketing, and training solutions that strengthen operations, improve visibility, and drive sustainable enrolment growth. His vision is to build TeachSphere into a trusted, long-term partner for schools across Nigeria and Africa.</p>
+        <p class="founder-bio">Adebowale Adeleye is the Founder and Chief Executive Officer of TeachSphere. Driven by a passion for transforming education through technology, he established TeachSphere to build a connected ecosystem that empowers learners, educators, schools, and institutions with innovative digital solutions. His vision is to make learning more accessible, school management more efficient, educator development more impactful, and educational growth more sustainable across Africa and beyond. Through TeachSphere, he is building a future where technology and education work together to create lasting impact.</p>
       </div>
     </div>
   </div>
@@ -1088,35 +1135,26 @@
 
 <section class="banner-photo">
   <div class="banner-inner reveal">
-    <div class="eyebrow">ACROSS NIGERIA &amp; BEYOND</div>
+    <div class="eyebrow">A GLOBAL EDUCATION ECOSYSTEM</div>
     <h3>Built for real classrooms, real administrators, real growth.</h3>
-    <p>From Creche to SS3 and beyond — our solutions are shaped by the everyday realities of Nigerian schools.</p>
+    <p>Supporting education from Early Years to Lifelong Learning — built for learners, educators, schools, and education systems worldwide.</p>
   </div>
 </section>
 
 <section class="section section-alt">
   <div class="wrap">
-    <div class="coverage-wrap reveal">
-      <div class="coverage-head">
-        <div class="eyebrow" style="justify-content:center; color:var(--gold-light);">OUR FOOTPRINT</div>
-        <h3>Where We Operate</h3>
+    <div class="why-schools-wrap reveal">
+      <div class="section-head reveal" style="text-align:center; max-width:680px; margin:0 auto 40px;">
+        <div class="eyebrow" style="justify-content:center; color:var(--gold-light);">WHY SCHOOLS CHOOSE US</div>
+        <h2 style="color:#fff;">Why Schools Choose TeachSphere</h2>
       </div>
-      <div class="coverage-grid">
-        <div class="coverage-states">
-          <div class="state-chip" data-state="Lagos"><i class="fa-solid fa-location-dot"></i> Lagos</div>
-          <div class="state-chip" data-state="Ogun"><i class="fa-solid fa-location-dot"></i> Ogun</div>
-          <div class="state-chip" data-state="Anambra"><i class="fa-solid fa-location-dot"></i> Anambra</div>
-          <div class="state-chip" data-state="FCT Abuja"><i class="fa-solid fa-location-dot"></i> FCT Abuja</div>
-          <div class="state-chip" data-state="Nasarawa"><i class="fa-solid fa-location-dot"></i> Nasarawa</div>
-          <div class="state-chip" data-state="Niger"><i class="fa-solid fa-location-dot"></i> Niger</div>
-          <div class="state-chip" data-state="Ondo"><i class="fa-solid fa-location-dot"></i> Ondo</div>
-          <div class="state-chip" data-state="Edo"><i class="fa-solid fa-location-dot"></i> Edo</div>
-          <div class="state-chip" data-state="Delta"><i class="fa-solid fa-location-dot"></i> Delta</div>
-        </div>
-      </div>
-      <div class="coverage-caption">
-        <h4>Expanding Across Nigeria</h4>
-        <p>TeachSphere continues to partner with schools across Nigeria and welcomes enquiries from schools in every state.</p>
+      <div class="why-schools-grid">
+        <div class="why-schools-card"><i class="fa-solid fa-mobile-screen-button"></i><h4>Mobile First</h4><p>Designed to work beautifully on any device, anywhere.</p></div>
+        <div class="why-schools-card"><i class="fa-solid fa-cloud"></i><h4>Cloud Based</h4><p>Accessible anytime, with no complex infrastructure to manage.</p></div>
+        <div class="why-schools-card"><i class="fa-solid fa-shield-halved"></i><h4>Secure Platform</h4><p>Built with security and data protection as a foundation.</p></div>
+        <div class="why-schools-card"><i class="fa-solid fa-wifi"></i><h4>Offline Learning</h4><p>PWA-ready, so learning continues even without a connection.</p></div>
+        <div class="why-schools-card"><i class="fa-solid fa-robot"></i><h4>AI Ready</h4><p>Built to grow with intelligent, AI-powered learning tools.</p></div>
+        <div class="why-schools-card"><i class="fa-solid fa-arrows-spin"></i><h4>Continuous Innovation</h4><p>Constantly evolving to meet the needs of modern education.</p></div>
       </div>
     </div>
     <div class="section-head reveal">
@@ -1170,98 +1208,90 @@
       <div class="goal-item"><div class="goal-check"><i class="fa-solid fa-check"></i></div><p>Developing innovative learning management and school management systems.</p></div>
       <div class="goal-item"><div class="goal-check"><i class="fa-solid fa-check"></i></div><p>Promoting operational efficiency through smart digital solutions.</p></div>
       <div class="goal-item"><div class="goal-check"><i class="fa-solid fa-check"></i></div><p>Building strong partnerships that contribute to long-term educational excellence.</p></div>
-      <div class="goal-item"><div class="goal-check"><i class="fa-solid fa-check"></i></div><p>Expanding our services across Nigeria and throughout Africa.</p></div>
+      <div class="goal-item"><div class="goal-check"><i class="fa-solid fa-check"></i></div><p>Expanding our reach across Africa and beyond.</p></div>
     </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="solutions">
+<section class="section section-alt" id="trust">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">OUR SOLUTIONS</div>
-      <h2>Six ways we help schools learn better, manage smarter, and grow faster.</h2>
-    </div>
-    <div class="solutions-grid reveal">
-      <div class="solution-card">
-        <div class="solution-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <h3>School Growth &amp; Marketing</h3>
-        <p>Strategic digital marketing, admission campaigns, and lead generation designed specifically for schools.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon"><i class="fa-solid fa-microchip"></i></div>
-        <h3>Education Technology Solutions</h3>
-        <p>We implement and support trusted technology platforms — including partner solutions such as Edusmartech — tailored to your school's needs.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon"><i class="fa-solid fa-globe"></i></div>
-        <h3>School Website Development</h3>
-        <p>Custom, professional websites that strengthen your school's brand, visibility, and communication with parents.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
-        <h3>Teacher Professional Development</h3>
-        <p>Hands-on training programmes that build staff capacity and confidence with modern classroom technology.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon"><i class="fa-solid fa-lightbulb"></i></div>
-        <h3>Educational Consulting</h3>
-        <p>Strategy, operations, and growth planning support that goes beyond technology to build sustainable improvement.</p>
-      </div>
-      <div class="solution-card">
-        <div class="solution-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <h3>Digital Transformation</h3>
-        <p>A guided path from where your school is today to a modern, technology-enabled institution.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="technology">
-  <div class="wrap">
-    <div class="section-head reveal" style="margin:0 auto 20px; text-align:center; max-width:720px;">
-      <div class="eyebrow" style="justify-content:center;">TRUSTED INTEGRATIONS</div>
-      <h2 style="margin-top:14px;">Our Technology Partners</h2>
-      <p style="margin-top:14px;">TeachSphere collaborates with trusted education technology providers to deliver secure, scalable, and innovative digital solutions for schools. We implement and support these partner platforms directly for our clients — we do not own or operate a proprietary school management system ourselves.</p>
-    </div>
-    <div class="tech-logo-row reveal">
-      <div class="tech-logo-card">
-        <img src="data:image/png;base64,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" alt="Edusmartech logo">
-        <div class="tech-logo-caption">Edusmartech<span>School Management System Partner</span></div>
-      </div>
+    <div class="section-head reveal" style="text-align:center; max-width:680px; margin:0 auto 40px;">
+      <div class="eyebrow" style="justify-content:center;">WHY TRUST TEACHSPHERE</div>
+      <h2>Built on a foundation you can rely on.</h2>
     </div>
     <div class="tech-partners-grid reveal">
-      <div class="tech-chip"><i class="fa-solid fa-cloud"></i> Cloud Hosting &amp; Infrastructure</div>
-      <div class="tech-chip"><i class="fa-solid fa-shield-halved"></i> Secure Payment Systems</div>
-      <div class="tech-chip"><i class="fa-brands fa-whatsapp"></i> WhatsApp Business API</div>
-      <div class="tech-chip"><i class="fa-solid fa-server"></i> Reliable Uptime Monitoring</div>
-      <div class="tech-chip"><i class="fa-solid fa-lock"></i> Data Protection &amp; Backup</div>
+      <div class="tech-chip"><i class="fa-solid fa-shield-halved"></i> Secure Infrastructure</div>
+      <div class="tech-chip"><i class="fa-solid fa-user-lock"></i> Privacy First</div>
+      <div class="tech-chip"><i class="fa-solid fa-microchip"></i> Modern Technologies</div>
+      <div class="tech-chip"><i class="fa-solid fa-headset"></i> Reliable Support</div>
+      <div class="tech-chip"><i class="fa-solid fa-layer-group"></i> Scalable Platform</div>
+      <div class="tech-chip"><i class="fa-solid fa-seedling"></i> Built for Long-Term Growth</div>
     </div>
   </div>
 </section>
 
-<div class="mini-banner">
-  <p>Trusted Technology. <span>Expert Implementation.</span> Lasting School Growth.</p>
-</div>
+<section class="section section-alt" id="glance">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center; max-width:680px; margin:0 auto 40px;">
+      <div class="eyebrow" style="justify-content:center;">TEACHSPHERE AT A GLANCE</div>
+      <h2>Built for what's next in education.</h2>
+    </div>
+    <div class="glance-grid reveal">
+      <div class="glance-item"><i class="fa-solid fa-earth-africa"></i><span>Global Vision</span></div>
+      <div class="glance-item"><i class="fa-solid fa-mobile-screen-button"></i><span>Mobile First</span></div>
+      <div class="glance-item"><i class="fa-solid fa-cloud-arrow-down"></i><span>Offline Learning Ready</span></div>
+      <div class="glance-item"><i class="fa-solid fa-robot"></i><span>AI Powered</span></div>
+      <div class="glance-item"><i class="fa-solid fa-cloud"></i><span>Cloud Infrastructure</span></div>
+      <div class="glance-item"><i class="fa-solid fa-people-group"></i><span>Growing Community</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roadmap">
+  <div class="wrap">
+    <div class="section-head reveal" style="text-align:center; max-width:680px; margin:0 auto 48px;">
+      <div class="eyebrow" style="justify-content:center;">OUR ROADMAP</div>
+      <h2>Building the TeachSphere ecosystem, one year at a time.</h2>
+    </div>
+    <div class="roadmap-grid reveal">
+      <div class="roadmap-year">
+        <div class="roadmap-year-label">2026</div>
+        <div class="roadmap-item roadmap-done"><i class="fa-solid fa-circle-check"></i> TeachSphere Website</div>
+      </div>
+      <div class="roadmap-year">
+        <div class="roadmap-year-label">2027</div>
+        <div class="roadmap-item"><i class="fa-solid fa-hammer"></i> TeachSphere Learn</div>
+        <div class="roadmap-item"><i class="fa-solid fa-hammer"></i> TeachSphere Manage</div>
+      </div>
+      <div class="roadmap-year">
+        <div class="roadmap-year-label">2028</div>
+        <div class="roadmap-item"><i class="fa-solid fa-hammer"></i> TeachSphere Academy</div>
+        <div class="roadmap-item"><i class="fa-solid fa-hammer"></i> TeachSphere Exams</div>
+      </div>
+      <div class="roadmap-year">
+        <div class="roadmap-year-label">2029</div>
+        <div class="roadmap-item"><i class="fa-solid fa-hammer"></i> TeachSphere AI</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section" id="services">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">FEATURED SERVICES</div>
+      <div class="eyebrow">PROFESSIONAL SERVICES</div>
       <h2>Practical, hands-on services we deliver for schools.</h2>
     </div>
     <div class="featured-services-grid reveal">
-      <div class="service-card"><i class="fa-solid fa-server"></i><span>School Portal Implementation</span></div>
       <div class="service-card"><i class="fa-solid fa-globe"></i><span>School Website Development</span></div>
-      <div class="service-card"><i class="fa-solid fa-palette"></i><span>School Branding</span></div>
       <div class="service-card"><i class="fa-solid fa-bullhorn"></i><span>Digital Marketing</span></div>
-      <div class="service-card"><i class="fa-solid fa-file-pen"></i><span>CBT Implementation</span></div>
-      <div class="service-card"><i class="fa-solid fa-envelope-open-text"></i><span>Staff Email Setup</span></div>
-      <div class="service-card"><i class="fa-brands fa-google"></i><span>Google Workspace for Schools</span></div>
+      <div class="service-card"><i class="fa-solid fa-palette"></i><span>School Branding</span></div>
+      <div class="service-card"><i class="fa-brands fa-google"></i><span>Google Workspace</span></div>
       <div class="service-card"><i class="fa-brands fa-whatsapp"></i><span>Parent Communication Solutions</span></div>
       <div class="service-card"><i class="fa-solid fa-wifi"></i><span>ICT Infrastructure</span></div>
     </div>
-    <p style="margin-top:24px; font-size:0.85rem; color:var(--ink-soft); text-align:center;">TeachSphere implements and supports these solutions through trusted technology partners — we are not a school management system provider ourselves.</p>
+    <p style="margin-top:24px; font-size:0.85rem; color:var(--ink-soft); text-align:center;">TeachSphere delivers these services while our flagship software products are being developed.</p>
   </div>
 </section>
 
@@ -1300,7 +1330,7 @@
 <section class="section" id="process">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow">HOW WE WORK</div>
+      <div class="eyebrow">OUR IMPLEMENTATION FRAMEWORK</div>
       <h2>A clear, guided process from first conversation to lasting impact.</h2>
     </div>
     <div class="process-timeline reveal">
@@ -1316,50 +1346,13 @@
 
 <section class="section" id="pricing">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">INVESTMENT</div>
-      <h2>Packages built around your school's stage of growth.</h2>
-      <p style="margin-top:14px;">Every institution is different, so final pricing is customized after a short discovery call. The tiers below show what's typically included.</p>
-    </div>
-    <div class="price-grid reveal">
-      <div class="price-card">
-        <div class="price-tier">Starter</div>
-        <div class="price-name">Foundation</div>
-        <div class="price-tag">For schools building their first digital presence</div>
-        <ul class="price-features">
-          <li><i class="fa-solid fa-check"></i> School website &amp; portal</li>
-          <li><i class="fa-solid fa-check"></i> WhatsApp Business setup</li>
-          <li><i class="fa-solid fa-check"></i> Social media starter kit</li>
-          <li><i class="fa-solid fa-check"></i> Monthly performance snapshot</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline">Request a School Assessment</a>
-      </div>
-      <div class="price-card featured">
-        <div class="price-ribbon">MOST POPULAR</div>
-        <div class="price-tier">Growth</div>
-        <div class="price-name">Momentum</div>
-        <div class="price-tag">For schools actively scaling admissions</div>
-        <ul class="price-features">
-          <li><i class="fa-solid fa-check"></i> Everything in Foundation</li>
-          <li><i class="fa-solid fa-check"></i> Admission campaign management</li>
-          <li><i class="fa-solid fa-check"></i> Facebook &amp; Instagram advertising</li>
-          <li><i class="fa-solid fa-check"></i> Lead generation &amp; enquiry management</li>
-          <li><i class="fa-solid fa-check"></i> Content creation (graphics &amp; video)</li>
-        </ul>
-        <a href="#contact" class="btn btn-gold">Speak with an Education Consultant</a>
-      </div>
-      <div class="price-card">
-        <div class="price-tier">Enterprise</div>
-        <div class="price-name">Transformation</div>
-        <div class="price-tag">For institutions ready for full digital transformation</div>
-        <ul class="price-features">
-          <li><i class="fa-solid fa-check"></i> Everything in Momentum</li>
-          <li><i class="fa-solid fa-check"></i> LMS &amp; CBT / online examinations</li>
-          <li><i class="fa-solid fa-check"></i> Staff training &amp; capacity development</li>
-          <li><i class="fa-solid fa-check"></i> Dedicated educational consulting</li>
-          <li><i class="fa-solid fa-check"></i> Performance monitoring &amp; reporting</li>
-        </ul>
-        <a href="#contact" class="btn btn-outline">Partner with TeachSphere</a>
+    <div class="consult-cta reveal" style="text-align:center; max-width:680px; margin:0 auto;">
+      <div class="eyebrow" style="justify-content:center;">LET'S TALK</div>
+      <h2>Let's Discuss Your Institution's Needs</h2>
+      <p style="margin-top:14px;">Every school or institution is unique. We'll recommend the most suitable TeachSphere solution after a short strategy session.</p>
+      <div class="hero-actions" style="justify-content:center; margin-top:28px;">
+        <a href="#contact" class="btn btn-gold"><i class="fa-solid fa-calendar-check"></i> Book Strategy Session</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Contact Sales</a>
       </div>
     </div>
   </div>
@@ -1560,7 +1553,7 @@
     <div class="faq-list reveal">
       <div class="faq-item">
         <div class="faq-q">Do you develop school portals?<i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a"><p>Yes. We implement and support trusted school management platforms — such as our partner Edusmartech — configured and set up for your school's specific needs. TeachSphere is not the owner of the underlying platform; we handle implementation, training, and ongoing support.</p></div>
+        <div class="faq-a"><p>Yes. We build and support school management platforms — including TeachSphere Manage — configured and set up for your school's specific needs, with full implementation, training, and ongoing support.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Do you design school websites?<i class="fa-solid fa-plus"></i></div>
@@ -1608,15 +1601,14 @@
 
 <section class="promise" id="promise">
   <div class="wrap promise-inner">
-    <div class="eyebrow" style="justify-content:center;">BOOK A FREE CONSULTATION</div>
-    <h2>Ready to Transform Your School?</h2>
-    <p>Book a free consultation and discover how TeachSphere can help your school embrace technology, improve operations, and achieve sustainable growth.</p>
+    <div class="eyebrow" style="justify-content:center;">READY TO TRANSFORM EDUCATION?</div>
+    <h2>Ready to Transform Education?</h2>
+    <p>Whether you're a learner, educator, school leader, or institution, TeachSphere is building the tools to help you succeed in a digital-first world.</p>
     <div class="promise-actions">
-      <!-- TODO: swap href="#contact" for a Calendly link/embed once available -->
-      <a href="#contact" class="btn btn-white" id="bookConsultBtn"><i class="fa-solid fa-calendar-check"></i> Book a Consultation</a>
-      <a href="#solutions" class="btn btn-ghost"><i class="fa-solid fa-arrow-up-right-from-square"></i> Explore Our Solutions</a>
+      <a href="#ecosystem" class="btn btn-white" id="bookConsultBtn"><i class="fa-solid fa-compass"></i> Explore the TeachSphere Ecosystem</a>
+      <a href="#contact" class="btn btn-ghost"><i class="fa-solid fa-calendar-check"></i> Book a Strategy Session</a>
     </div>
-    <div class="promise-tagline">Learn &nbsp;•&nbsp; Manage &nbsp;•&nbsp; Grow</div>
+    <div class="promise-tagline">Learn &nbsp;•&nbsp; Manage &nbsp;•&nbsp; Grow &nbsp;•&nbsp; Academy &nbsp;•&nbsp; Exams &nbsp;•&nbsp; AI</div>
   </div>
 </section>
 
@@ -1639,41 +1631,49 @@
         </div>
       </div>
       <div class="foot-col">
-        <h4>Quick Links</h4>
+        <h4>Products</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#who">About Us</a></li>
-          <li><a href="#solutions">Solutions</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://learn.teachsphere.com.ng">Learn</a></li>
+          <li><a href="https://manage.teachsphere.com.ng">Manage</a></li>
+          <li><a href="https://growth.teachsphere.com.ng">Growth</a></li>
+          <li><a href="https://academy.teachsphere.com.ng">Academy</a></li>
+          <li><a href="https://exams.teachsphere.com.ng">Exams</a></li>
+          <li><a href="https://ai.teachsphere.com.ng">AI</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Solutions</h4>
+        <h4>Company</h4>
         <ul>
-          <li><a href="#solutions">School Growth &amp; Marketing</a></li>
-          <li><a href="#solutions">Education Technology Solutions</a></li>
-          <li><a href="#solutions">School Website Development</a></li>
-          <li><a href="#solutions">Teacher Professional Development</a></li>
-          <li><a href="#solutions">Educational Consulting</a></li>
-          <li><a href="#solutions">Digital Transformation</a></li>
+          <li><a href="#who">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Careers</a></li>
+          <li><a href="#resources">Insights</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4>Resources</h4>
         <ul>
-          <li><a href="#resources">Articles &amp; Guides</a></li>
-          <li><a href="#resources">Templates &amp; Downloads</a></li>
-          <li><a href="#events">Events &amp; Training</a></li>
+          <li><a href="#resources">Help Centre</a></li>
+          <li><a href="#resources">Documentation</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Technology Partners</h4>
+        <h4>Legal</h4>
         <ul>
-          <li><a href="#technology">Edusmartech</a></li>
-          <li style="color:rgba(255,255,255,0.5); font-size:0.82rem; margin-top:4px;">School Management System Partner</li>
-          <li style="margin-top:14px;"><a href="#contact">Partner with TeachSphere</a></li>
+          <li><a href="#" id="footerPrivacyLink2">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://wa.me/2348077268815" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://facebook.com/TeachSphereNG" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://linkedin.com/company/TeachSphereNG" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://youtube.com/@TeachSphereNG" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="mailto:info@teachsphere.com.ng">Email</a></li>
         </ul>
       </div>
     </div>
@@ -1947,7 +1947,7 @@
     if(!modal) return;
     function openModal(e){ if(e) e.preventDefault(); modal.style.display = 'flex'; }
     function closeModal(){ modal.style.display = 'none'; }
-    ['cookiePrivacyLink','footerPrivacyLink'].forEach(function(id){
+    ['cookiePrivacyLink','footerPrivacyLink','footerPrivacyLink2'].forEach(function(id){
       var el = document.getElementById(id);
       if(el) el.addEventListener('click', openModal);
     });
